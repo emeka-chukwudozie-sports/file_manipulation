@@ -2,9 +2,7 @@ package file_read;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Main {
 
@@ -14,6 +12,10 @@ public class Main {
         List<Product> productList = new ArrayList<>();
         try {
             productService.setProductList(productList);
+            System.out.println("*********List of Products*********");
+            printProductList(productService.getProductList());
+            System.out.println();
+            System.out.println("==========================================================");
             System.out.println(productService.createProducts(file, productList));
 //            productService.getProductList().forEach(System.out::println);
             printProductList(productService.createUniqueProducts());

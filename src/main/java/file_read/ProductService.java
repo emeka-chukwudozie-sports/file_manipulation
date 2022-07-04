@@ -37,7 +37,8 @@ public class ProductService {
                     int productQuantity = Integer.parseInt(output[4].trim());
                     double productPrice = Double.parseDouble(output[5].trim());
                     Product product = new Product(productName, productQuantity, productPrice);
-                        products.add(product);
+                    System.out.println(product);
+                    products.add(product);
                 }
 
             } catch (IOException e) {
