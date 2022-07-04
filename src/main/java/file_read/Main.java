@@ -10,18 +10,21 @@ public class Main {
 
     public static void main(String[] args) {
         ProductService productService = new ProductService();
-        String file = "/home/emeka/IdeaProjects/Java_Algorithm/FileManipulation/src/main/resources/SampleData.csv";
+        String file = "src/main/resources/SampleData.csv";
         List<Product> productList = new ArrayList<>();
         try {
             productService.setProductList(productList);
             System.out.println(productService.createProducts(file, productList));
-            productService.getProductList().forEach(System.out::println);
+//            productService.getProductList().forEach(System.out::println);
+            printProductList(productService.createUniqueProducts());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
     }
 
-
+    static void printProductList(List<Product> productList){
+        productList.forEach(System.out::println);
+    }
 
 }
